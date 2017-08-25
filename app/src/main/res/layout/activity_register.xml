@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yuzelli.bookkeepmananger.view.activity.LoginActivity">
+
+    <include layout="@layout/headtitle_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/v_center"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_contry"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="国家/地区"
+                android:textColor="@color/text_title_color"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tv_contry"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="中国"
+                android:layout_centerInParent="true"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_reght2"/>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="30dp">
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
+                android:text="+86"
+                android:textColor="@color/text_title_color"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/tv_phone"
+                android:hint="请输入手机号"
+                android:paddingLeft="5dp"
+                android:textSize="13sp"
+                android:background="@drawable/view_shape_line"
+                android:textColor="@color/text_title_color" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="30dp">
+
+            <TextView
+                android:id="@+id/tv_password"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="密    码：    "
+                android:textColor="@color/text_title_color"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/tv_password"
+                android:hint="请输入密码"
+                android:paddingLeft="5dp"
+                android:textSize="13sp"
+                android:inputType="textPassword"
+                android:background="@drawable/view_shape_line"
+                android:textColor="@color/text_title_color" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="30dp">
+
+            <TextView
+                android:id="@+id/tv_ok_password"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="确认密码："
+                android:textColor="@color/text_title_color"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_ok_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/tv_ok_password"
+                android:hint="请输入密码"
+                android:paddingLeft="5dp"
+                android:textSize="13sp"
+                android:inputType="textPassword"
+                android:background="@drawable/view_shape_line"
+                android:textColor="@color/text_title_color" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true" />
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/v_center"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_height="30dp">
+
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="验证码："
+            android:textColor="@color/text_title_color"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_version"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/tv_version"
+            android:hint="请输入验证码"
+            android:paddingLeft="5dp"
+            android:textSize="13sp"
+            android:inputType="textPassword"
+            android:background="@drawable/view_shape_line"
+            android:textColor="@color/text_title_color" />
+    </RelativeLayout>
+
+    <com.example.yuzelli.bookkeepmananger.widgets.MyPorter
+       android:id="@+id/myPorter"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/rl_content"/>
+    <ImageView
+        android:id="@+id/img_refresh"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_refresh"
+        android:layout_below="@+id/rl_content"
+        android:layout_toEndOf="@+id/myPorter"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp" />
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/view_shape_blue"
+        android:textSize="23sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="注册"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/myPorter"/>
+
+
+
+
+</RelativeLayout>

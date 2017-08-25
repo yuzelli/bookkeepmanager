@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string-array name="contry_date">
+       		 <item>Angola-安哥拉-0244</item>
+			 <item>Afghanistan-阿富汗-93</item>
+			 <item>Albania-阿尔巴尼亚-335</item>
+			 <item>Algeria-阿尔及利亚-213</item>
+			 <item>Andorra-安道尔共和国-376</item>
+			 <item>Anguilla-安圭拉岛-1254</item>
+			 <item>Antigua and Barbuda-安提瓜和巴布达-1268</item>
+			 <item>Argentina-阿根廷-54</item>
+			 <item>Armenia-亚美尼亚-374</item>
+			 <item>Ascension-阿森松-247</item>
+			 <item>Australia-澳大利亚-61</item>
+			 <item>Austria-奥地利-43</item>
+			 <item>Azerbaijan-阿塞拜疆-994</item>
+			 <item>Bahamas-巴哈马-1242</item>
+			 <item>Bahrain-巴林-973</item>
+			 <item>Bangladesh-孟加拉国-880</item>
+			 <item>Barbados-巴巴多斯-1246</item>
+			 <item>Belarus-白俄罗斯-375</item>
+			 <item>Belgium-比利时-32</item>
+			 <item>Belize-伯利兹-501</item>
+			 <item>Benin-贝宁-229</item>
+			 <item>Bermuda Is-百慕大群岛-1441</item>
+			 <item>Bolivia-玻利维亚-591</item>
+			 <item>Botswana-博茨瓦纳-267</item>
+			 <item>Brazil-巴西-55</item>
+			 <item>Brunei-文莱-673</item>
+			 <item>Bulgaria-保加利亚-359</item>
+			 <item>Burkina Faso-布基纳法索-226</item>
+			 <item>Burma-缅甸-95</item>
+			 <item>Burundi-布隆迪-257</item>
+			 <item>Cameroon-喀麦隆-237</item>
+			 <item>Canada-加拿大-1</item>
+			 <item>Cayman Is-开曼群岛-1345</item>
+			 <item>Central African Republic-中非共和国-236</item>
+			 <item>Chad-乍得-235</item>
+			 <item>Chile-智利-56</item>
+			 <item>China-中国-86</item>
+			 <item>Colombia-哥伦比亚-57</item>
+			 <item>Congo-刚果-242</item>
+			 <item>Cook Is-库克群岛-682</item>
+			 <item>Costa Rica-哥斯达黎加-506</item>
+			 <item>Cuba-古巴-53</item>
+			 <item>Cyprus-塞浦路斯-357</item>
+			 <item>Czech Republic-捷克-420</item>
+			 <item>Denmark-丹麦-45</item>
+			 <item>Djibouti-吉布提-253</item>
+			 <item>Dominica Rep-多米尼加共和国-1890</item>
+			 <item>Ecuador-厄瓜多尔-593</item>
+			 <item>Egypt-埃及-20</item>
+			 <item>EI Salvador-萨尔瓦多-503</item>
+			 <item>Estonia-爱沙尼亚-372</item>
+			 <item>Ethiopia-埃塞俄比亚-251</item>
+			 <item>Fiji-斐济-679</item>
+			 <item>Finland-芬兰-358</item>
+			 <item>France-法国-33</item>
+			 <item>French Guiana-法属圭亚那-594</item>
+			 <item>French Polynesia-法属玻利尼西亚-689</item>
+			 <item>Gabon-加蓬-241</item>
+			 <item>Gambia-冈比亚-220</item>
+			 <item>Georgia-格鲁吉亚-995</item>
+			 <item>Germany-德国-49</item>
+			 <item>Ghana-加纳-233</item>
+			 <item>Gibraltar-直布罗陀-350</item>
+			 <item>Greece-希腊-30</item>
+			 <item>Grenada-格林纳达-1809</item>
+			 <item>Guam-关岛-1671</item>
+			 <item>Guatemala-危地马拉-502</item>
+			 <item>Guinea-几内亚-224</item>
+			 <item>Guyana-圭亚那-592</item>
+			 <item>Haiti-海地-509</item>
+			 <item>Honduras-洪都拉斯-504</item>
+			 <item>Hongkong-香港-852</item>
+			 <item>Hungary-匈牙利-36</item>
+			 <item>Iceland-冰岛-354</item>
+			 <item>India-印度-91</item>
+			 <item>Indonesia-印度尼西亚-62</item>
+			 <item>Iran-伊朗-98</item>
+			 <item>Iraq-伊拉克-964</item>
+			 <item>Ireland-爱尔兰-353</item>
+			 <item>Israel-以色列-972</item>
+			 <item>Italy-意大利-39</item>
+			 <item>Ivory Coast-科特迪瓦-225</item>
+			 <item>Jamaica-牙买加-1876</item>
+			 <item>Japan-日本-81</item>
+			 <item>Jordan-约旦-962</item>
+			 <item>Kampuchea (Cambodia )-柬埔寨-855</item>
+			 <item>Kazakstan-哈萨克斯坦-327</item>
+			 <item>Kenya-肯尼亚-254</item>
+			 <item>Korea-韩国-82</item>
+			 <item>Kuwait-科威特-965</item>
+			 <item>Kyrgyzstan-吉尔吉斯坦-331</item>
+			 <item>Laos-老挝-856</item>
+			 <item>Latvia-拉脱维亚-371</item>
+			 <item>Lebanon-黎巴嫩-961</item>
+			 <item>Lesotho-莱索托-266</item>
+			 <item>Liberia-利比里亚-231</item>
+			 <item>Libya-利比亚-218</item>
+			 <item>Liechtenstein-列支敦士登--423</item>
+			 <item>Lithuania-立陶宛-370</item>
+			 <item>Luxembourg-卢森堡-352</item>
+			 <item>Macao-澳门-853</item>
+			 <item>Madagascar-马达加斯加-261</item>
+			 <item>Malawi-马拉维-265</item>
+			 <item>Malaysia-马来西亚-60</item>
+			 <item>Maldives-马尔代夫-960</item>
+			 <item>Mali-马里-223</item>
+			 <item>Malta-马耳他-356</item>
+			 <item>Mariana Is-马里亚那群岛-1670</item>
+			 <item>Martinique-马提尼克-596</item>
+			 <item>Mauritius-毛里求斯-230</item>
+			 <item>Mexico-墨西哥-52</item>
+			 <item>Moldova-摩尔多瓦-373</item>
+			 <item>Monaco-摩纳哥-377</item>
+			 <item>Mongolia-蒙古-976</item>
+			 <item>Montserrat Is-蒙特塞拉特岛-1664</item>
+			 <item>Morocco-摩洛哥-212</item>
+			 <item>Mozambique-莫桑比克-258</item>
+			 <item>Namibia-纳米比亚-264</item>
+			 <item>Nauru-瑙鲁-674</item>
+			 <item>Nepal-尼泊尔-977</item>
+			 <item>Netheriands Antilles-荷属安的列斯-599</item>
+			 <item>Netherlands-荷兰-31</item>
+			 <item>New Zealand-新西兰-64</item>
+			 <item>Nicaragua-尼加拉瓜-505</item>
+			 <item>Niger-尼日尔-227</item>
+			 <item>Nigeria-尼日利亚-234</item>
+			 <item>North Korea-朝鲜-850</item>
+			 <item>Norway-挪威-47</item>
+			 <item>Oman-阿曼-968</item>
+			 <item>Pakistan-巴基斯坦-92</item>
+			 <item>Panama-巴拿马-507</item>
+			 <item>Papua New Cuinea-巴布亚新几内亚-675</item>
+			 <item>Paraguay-巴拉圭-595</item>
+			 <item>Peru-秘鲁-51</item>
+			 <item>Philippines-菲律宾-63</item>
+			 <item>Poland-波兰-48</item>
+			 <item>Portugal-葡萄牙-351</item>
+			 <item>Puerto Rico-波多黎各-1787</item>
+			 <item>Qatar-卡塔尔-974</item>
+			 <item>Reunion-留尼旺-262</item>
+			 <item>Romania-罗马尼亚-40</item>
+			 <item>Russia-俄罗斯-7</item>
+			 <item>Saint Lueia-圣卢西亚-1758</item>
+			 <item>Saint Vincent-圣文森特岛-1784</item>
+			 <item>Samoa Eastern-东萨摩亚(美)-684</item>
+			 <item>Samoa Western-西萨摩亚-685</item>
+			 <item>San Marino-圣马力诺-378</item>
+			 <item>Sao Tome and Principe-圣多美和普林西比-239</item>
+			 <item>Saudi Arabia-沙特阿拉伯-966</item>
+			 <item>Senegal-塞内加尔-221</item>
+			 <item>Seychelles-塞舌尔-248</item>
+			 <item>Sierra Leone-塞拉利昂-232</item>
+			 <item>Singapore-新加坡-65</item>
+			 <item>Slovakia-斯洛伐克-421</item>
+			 <item>Slovenia-斯洛文尼亚-386</item>
+			 <item>Solomon Is-所罗门群岛-677</item>
+			 <item>Somali-索马里-252</item>
+			 <item>South Africa-南非-27</item>
+			 <item>Spain-西班牙-34</item>
+			 <item>SriLanka-斯里兰卡-94</item>
+			 <item>St.Lucia-圣卢西亚-1758</item>
+			 <item>St.Vincent-圣文森特-1784</item>
+			 <item>Sudan-苏丹-249</item>
+			 <item>Suriname-苏里南-597</item>
+			 <item>Swaziland-斯威士兰-268</item>
+			 <item>Sweden-瑞典-46</item>
+			 <item>Switzerland-瑞士-41</item>
+			 <item>Syria-叙利亚-963</item>
+			 <item>Taiwan-台湾省-886</item>
+			 <item>Tajikstan-塔吉克斯坦-992</item>
+			 <item>Tanzania-坦桑尼亚-255</item>
+			 <item>Thailand-泰国-66</item>
+			 <item>Togo-多哥-228</item>
+			 <item>Tonga-汤加-676</item>
+			 <item>Trinidad and Tobago-特立尼达和多巴哥-1809</item>
+			 <item>Tunisia-突尼斯-216</item>
+			 <item>Turkey-土耳其-90</item>
+			 <item>Turkmenistan-土库曼斯坦-993</item>
+			 <item>Uganda-乌干达-256</item>
+			 <item>Ukraine-乌克兰-380</item>
+			 <item>United Arab Emirates-阿拉伯联合酋长国-971</item>
+			 <item>United Kiongdom-英国-44</item>
+			 <item>United States of America-美国-1</item>
+			 <item>Uruguay-乌拉圭-598</item>
+			 <item>Uzbekistan-乌兹别克斯坦-233</item>
+			 <item>Venezuela-委内瑞拉-58</item>
+			 <item>Vietnam-越南-84</item>
+			 <item>Yemen-也门-967</item>
+			 <item>Yugoslavia-南斯拉夫-381</item>
+			 <item>Zimbabwe-津巴布韦-263</item>
+			 <item>Zaire-扎伊尔-243</item>
+			 <item>Zambia-赞比亚-260</item>
+    </string-array>
+
+</resources>
