@@ -35,6 +35,7 @@ public class FindPassWoridActivity extends BaseActivity {
     ImageView img_refresh;
     @BindView(R.id.btn_ver)
     Button btn_ver;
+    private Context context;
 
     @Override
     protected int layoutInit() {
@@ -43,7 +44,7 @@ public class FindPassWoridActivity extends BaseActivity {
 
     @Override
     protected void binEvent() {
-
+        context = this;
     }
 
     @Override
@@ -83,6 +84,8 @@ public class FindPassWoridActivity extends BaseActivity {
         }
 
         if(MyPorter.verification().equals(ver)){
+             ChangePassActivity.startAction(context,phone);
+            finish();
 
         }else {
             showToast("验证码错误");
