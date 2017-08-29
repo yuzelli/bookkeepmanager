@@ -4,7 +4,15 @@ public class UserBean {
     private int user_id;
     private String phone;
     private String passWord;
+    private String name ;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getUser_id() {
         return user_id;

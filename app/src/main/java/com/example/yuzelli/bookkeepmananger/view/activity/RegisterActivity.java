@@ -152,6 +152,7 @@ public class RegisterActivity extends BaseActivity {
         map.put("type", "register");
         map.put("phone", etPhone.getText().toString().trim());
         map.put("passWord", etPassword.getText().toString().trim());
+        map.put("name", "");
         String url = OkHttpClientManager.attachHttpGetParams(ConstantsUtils.LOCTION_ADDRESS + ConstantsUtils.UserService, map);
         manager.getAsync(url, new OkHttpClientManager.DataCallBack() {
             @Override
@@ -184,7 +185,7 @@ public class RegisterActivity extends BaseActivity {
                     finish();
                     break;
                 case ConstantsUtils.REGISTER_GET_DATA_FAILURE:
-                    showToast("注册失败！");
+                    showToast("用户已注册！注册失败！");
                     break;
 
             }
