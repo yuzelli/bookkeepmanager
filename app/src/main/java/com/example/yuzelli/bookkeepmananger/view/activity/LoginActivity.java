@@ -126,6 +126,7 @@ public class LoginActivity extends BaseActivity {
                     finish();
                     break;
                 case ConstantsUtils.LOGIN_GET_DATA_FAILURE:
+                    showToast("登陆失败！");
                     break;
             }
         }

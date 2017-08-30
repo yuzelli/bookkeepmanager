@@ -19,18 +19,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.MainActivity"></activity>
-        <activity android:name=".view.activity.LoginActivity">
+        <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.activity.LoginActivity" />
         <activity android:name=".view.activity.FindPassWoridActivity" />
         <activity android:name=".view.activity.RegisterActivity" />
         <activity android:name=".view.activity.ContryActivity" />
-        <activity android:name=".view.activity.ChangePassActivity"></activity>
+        <activity android:name=".view.activity.ChangePassActivity" />
+        <activity android:name=".view.activity.AddAccountActivity" />
+        <activity android:name=".view.activity.SaveAccountActivity"></activity>
     </application>
 
 </manifest>
