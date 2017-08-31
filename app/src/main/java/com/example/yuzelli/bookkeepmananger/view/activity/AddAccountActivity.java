@@ -46,10 +46,7 @@ public class AddAccountActivity extends BaseActivity {
         gridType.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(AddAccountActivity.this,SaveAccountActivity.class);
-                intent.putExtra("type",gridDatas.get(i));
-                intent.putExtra("iszhichu",iszhichu);
-                startActivity(intent);
+               SaveAccountActivity.startAction(AddAccountActivity.this,gridDatas.get(i),iszhichu);
                 finish();
             }
         });

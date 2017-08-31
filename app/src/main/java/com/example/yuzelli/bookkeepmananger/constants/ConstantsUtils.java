@@ -25,6 +25,7 @@ public class ConstantsUtils {
     public static final String AVATAR_FILE_PATH = "/userHeadImg.jpg";
     public static final String CAR_INFO = "CAR_INFO_MESSAGE";
     public static final String USER_INFO = "USER_INFO";
+    public static final String Bookkeep_INFO = "Bookkeep_INFO";
 
 
 
