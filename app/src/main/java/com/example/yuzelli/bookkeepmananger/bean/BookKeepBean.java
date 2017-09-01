@@ -13,9 +13,36 @@ public class BookKeepBean implements Serializable {
     private String day;
     private String hour;
     private String min;
+    private String week;
     private int type_id;
     private int isZhiCu;
     private String comment;
+    private String money;
+    private long time ;
+
+    public String getWeek() {
+        return week;
+    }
+
+    public void setWeek(String week) {
+        this.week = week;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
+
+    public String getMoney() {
+        return money;
+    }
+
+    public void setMoney(String money) {
+        this.money = money;
+    }
 
     public String getHour() {
         return hour;

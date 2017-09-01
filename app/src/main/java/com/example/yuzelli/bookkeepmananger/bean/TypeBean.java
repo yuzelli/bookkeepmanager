@@ -10,11 +10,20 @@ public class TypeBean implements Serializable{
     private int typeID;
     private String name ;
     private int typeRESID;
+    private double allMoney = 0;
 
     public TypeBean(int typeID, String name, int typeRESID) {
         this.typeID = typeID;
         this.name = name;
         this.typeRESID = typeRESID;
+    }
+
+    public double getAllMoney() {
+        return allMoney;
+    }
+
+    public void setAllMoney(double allMoney) {
+        this.allMoney = allMoney;
     }
 
     public int getTypeID() {

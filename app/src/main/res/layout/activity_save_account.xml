@@ -82,11 +82,45 @@
             android:textSize="20sp" />
     </RelativeLayout>
     <RelativeLayout
+        android:id="@+id/rl_momey"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/rl_time">
+
+        <TextView
+            android:id="@+id/tv_money_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="金额:"
+            android:textColor="@color/text_blue_color"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_money"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="请输入金额"
+            android:layout_toRightOf="@+id/tv_money_hint"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:inputType="numberDecimal"
+            android:background="@drawable/view_shape_line"
+            android:textColor="@color/text_blue_color"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <RelativeLayout
         android:id="@+id/rl_comment"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/rl_time">
+        android:layout_below="@+id/rl_momey">
 
         <TextView
             android:id="@+id/tv_comment_hint"

@@ -8,12 +8,12 @@ import java.util.Calendar;
  */
 
 public class DateUtils {
-    private int year;
-    private int month;
-    private int day;
-    private int hour;
-    private int minute;
-    private int second;
+    public int year;
+    public int month;
+    public int day;
+    public int hour;
+    public int minute;
+    public int second;
     /**
      * 获取当前时间的年月日时分秒
      * @return

@@ -1,13 +1,18 @@
 package com.example.yuzelli.bookkeepmananger.bean;
 
+import java.util.ArrayList;
+
 /**
  * Created by 51644 on 2017/9/7.
  */
 
-public class PartFirstBean {
+public class PartBean {
     private String time;
     private String week;
     private String money;
+    public ArrayList<BookKeepBean> bookKeepArrs = new ArrayList<>();
+
+
 
     public String getTime() {
         return time;

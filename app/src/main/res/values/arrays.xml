@@ -13,13 +13,27 @@
         <item>十月</item>
         <item>十一月</item>
         <item>十二月</item>
+    </string-array>
+   <string-array name="year">
+        <item>2017</item>
+        <item>2016</item>
+        <item>2015</item>
+        <item>2014</item>
+        <item>2013</item>
+
+    </string-array>
+    <string-array name="week">
+        <item>第一周</item>
+        <item>第二周</item>
+        <item>第三周</item>
+        <item>第四周</item>
+        <item>第五周</item>
 
     </string-array>
 
     <string-array name="zhi">
         <item>收入</item>
         <item>支出</item>
-
     </string-array>
 
 

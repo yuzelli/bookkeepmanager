@@ -106,6 +106,7 @@ public class ViewHolder
     public ViewHolder setImageResource(int viewId, int drawableId)
     {
         ImageView view = getView(viewId);
+        view.setScaleType(ImageView.ScaleType.FIT_XY);
         view.setImageResource(drawableId);
 
         return this;
