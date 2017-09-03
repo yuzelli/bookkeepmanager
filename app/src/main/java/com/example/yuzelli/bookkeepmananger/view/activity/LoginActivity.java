@@ -64,6 +64,7 @@ public class LoginActivity extends BaseActivity {
     protected void binEvent() {
         handler = new LoginHandler();
         context = this;
+        tvTitle.setText("登陆");
     }
 
     @Override
@@ -120,7 +121,7 @@ public class LoginActivity extends BaseActivity {
             super.handleMessage(msg);
             switch (msg.what){
                 case ConstantsUtils.LOGIN_GET_DATA:
-                    SharePreferencesUtil.saveObject(context,ConstantsUtils.USER_INFO,userInfo);
+                    SharePreferencesUtil.saveObject(context,ConstantsUtils.SP_LOGIN_USER_INFO,userInfo);
                     Intent intent = new Intent(context,MainActivity.class);
                     startActivity(intent);
                     finish();

@@ -75,6 +75,8 @@ public class RegisterActivity extends BaseActivity {
     protected void binEvent() {
         handler = new RegisterHandler();
         context = this;
+        tvTitle.setText("注册");
+        imgBack.setVisibility(View.VISIBLE);
     }
 
     @Override

@@ -12,12 +12,28 @@ public class TypeBean implements Serializable{
     private int typeRESID;
     private double allMoney = 0;
     private boolean isZhiChu = true;
-    private boolean isSHouRu = false;
+    private boolean isSHouRu = true;
 
     public TypeBean(int typeID, String name, int typeRESID) {
         this.typeID = typeID;
         this.name = name;
         this.typeRESID = typeRESID;
+    }
+
+    public boolean isZhiChu() {
+        return isZhiChu;
+    }
+
+    public void setZhiChu(boolean zhiChu) {
+        isZhiChu = zhiChu;
+    }
+
+    public boolean isSHouRu() {
+        return isSHouRu;
+    }
+
+    public void setSHouRu(boolean SHouRu) {
+        isSHouRu = SHouRu;
     }
 
     public double getAllMoney() {

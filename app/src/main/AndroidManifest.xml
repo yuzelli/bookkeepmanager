@@ -20,13 +20,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".view.activity.MainActivity">
+
+        </activity>
+        <activity android:name=".view.activity.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.LoginActivity" />
         <activity android:name=".view.activity.FindPassWoridActivity" />
         <activity android:name=".view.activity.RegisterActivity" />
         <activity android:name=".view.activity.ContryActivity" />
@@ -35,7 +37,8 @@
         <activity android:name=".view.activity.SaveAccountActivity" />
         <activity android:name=".view.activity.PieChartActivity" />
         <activity android:name=".view.activity.ParitiesActivity" />
-        <activity android:name=".view.activity.BeiFengActivity"></activity>
+        <activity android:name=".view.activity.BeiFengActivity" />
+        <activity android:name=".view.activity.SetTypeActivity"></activity>
     </application>
 
 </manifest>

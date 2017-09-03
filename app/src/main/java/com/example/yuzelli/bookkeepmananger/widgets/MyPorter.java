@@ -54,13 +54,8 @@ public class MyPorter extends ImageView {
     }
 
     public void refreshCode(){
-        Random rand = new Random();
-        verificationIndex = rand.nextInt(24);
-        mBitmap = BitmapFactory.decodeResource(getResources(), verificationImg[verificationIndex]);
-        mBitmap = zoomImage(mBitmap, DensityUtils.dp2px(context,90f),DensityUtils.dp2px(context,35f));
-        mOut= Bitmap.createBitmap(mBitmap.getWidth(), mBitmap.getHeight(), Bitmap.Config.ARGB_8888);
-        mCanvas = new Canvas(mOut);
-        mCanvas.drawColor(Color.GRAY);
+         init();
+        invalidate();
     }
 
     @Override
@@ -85,10 +80,11 @@ public class MyPorter extends ImageView {
         Random rand = new Random();
         verificationIndex = rand.nextInt(24);
         mBitmap = BitmapFactory.decodeResource(getResources(), verificationImg[verificationIndex]);
-        mBitmap = zoomImage(mBitmap, DensityUtils.dp2px(context,90f),DensityUtils.dp2px(context,35f));
+        mBitmap = zoomImage(mBitmap, DensityUtils.dp2px(context,150f),DensityUtils.dp2px(context,60f));
         mOut= Bitmap.createBitmap(mBitmap.getWidth(), mBitmap.getHeight(), Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mOut);
         mCanvas.drawColor(Color.GRAY);
+
     }
 
 

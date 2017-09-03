@@ -41,7 +41,9 @@ public class ChangePassActivity extends BaseActivity {
     protected void binEvent() {
         Intent intent = getIntent();
         phone = intent.getStringExtra("phone");
-
+        imgBack.setVisibility(View.VISIBLE);
+        tvTitle.setText("重置密码");
+        tvPhone.setText(phone);
     }
 
     @Override

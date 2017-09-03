@@ -12,6 +12,7 @@ import com.example.yuzelli.bookkeepmananger.R;
 import com.example.yuzelli.bookkeepmananger.base.BaseActivity;
 import com.example.yuzelli.bookkeepmananger.bean.BookKeepBean;
 import com.example.yuzelli.bookkeepmananger.bean.TypeBean;
+import com.example.yuzelli.bookkeepmananger.bean.UserBean;
 import com.example.yuzelli.bookkeepmananger.constants.ConstantsUtils;
 import com.example.yuzelli.bookkeepmananger.utils.DateTimePickDialogUtil;
 import com.example.yuzelli.bookkeepmananger.utils.DateUtils;
@@ -105,7 +106,8 @@ public class SaveAccountActivity extends BaseActivity {
 
     private void saveBookKeep() {
         ArrayList<BookKeepBean> list;
-        list = (ArrayList<BookKeepBean>) SharePreferencesUtil.readObject(this, ConstantsUtils.Bookkeep_INFO);
+        UserBean u = (UserBean) SharePreferencesUtil.readObject(this,ConstantsUtils.SP_LOGIN_USER_INFO);
+        list = (ArrayList<BookKeepBean>) SharePreferencesUtil.readObject(this,u.getPhone()+ ConstantsUtils.Bookkeep_INFO);
         if (list == null) {
             list = new ArrayList<>();
         }
@@ -141,7 +143,8 @@ public class SaveAccountActivity extends BaseActivity {
         }
         book.setWeek(weeks[week_index]);
         list.add(book);
-        SharePreferencesUtil.saveObject(this, ConstantsUtils.Bookkeep_INFO, list);
+
+        SharePreferencesUtil.saveObject(this,u.getPhone()+ ConstantsUtils.Bookkeep_INFO, list);
         finish();
     }
 

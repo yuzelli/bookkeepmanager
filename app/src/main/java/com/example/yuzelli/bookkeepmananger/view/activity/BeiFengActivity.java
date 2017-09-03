@@ -71,8 +71,10 @@ public class BeiFengActivity extends BaseActivity {
         OkHttpClientManager manager = OkHttpClientManager.getInstance();
         Map<String, String> map = new HashMap<>();
         map.put("type", "beifeng");
-        ArrayList<BookKeepBean> books = (ArrayList<BookKeepBean>) SharePreferencesUtil.readObject(BeiFengActivity.this, ConstantsUtils.Bookkeep_INFO);
+        UserBean u = (UserBean) SharePreferencesUtil.readObject(this,ConstantsUtils.SP_LOGIN_USER_INFO);
+        ArrayList<BookKeepBean> books = (ArrayList<BookKeepBean>) SharePreferencesUtil.readObject(BeiFengActivity.this,u.getPhone()+ ConstantsUtils.Bookkeep_INFO);
         JSONArray arr = new JSONArray();
+        UserBean userBean = (UserBean) SharePreferencesUtil.readObject(BeiFengActivity.this,ConstantsUtils.SP_LOGIN_USER_INFO);
         for (BookKeepBean b : books) {
             JSONObject json = new JSONObject();
             try {
@@ -87,6 +89,7 @@ public class BeiFengActivity extends BaseActivity {
                 json.put("comment",b.getComment());
                 json.put("money",b.getMoney());
                 json.put("time",b.getTime());
+                json.put("phone",userBean.getPhone());
 
             } catch (JSONException e) {
                 e.printStackTrace();

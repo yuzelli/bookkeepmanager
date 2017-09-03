@@ -5,7 +5,8 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="10dp"
-    android:background="@drawable/select_girdview_item"
+    android:id="@+id/ll_content"
+    android:background="@color/white"
     >
 
 
@@ -14,7 +15,6 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:scaleType="fitXY"
-
         />
 
     <TextView

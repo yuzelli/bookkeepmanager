@@ -13,6 +13,7 @@ import com.example.yuzelli.bookkeepmananger.R;
 import com.example.yuzelli.bookkeepmananger.base.BaseFragment;
 import com.example.yuzelli.bookkeepmananger.bean.BookKeepBean;
 import com.example.yuzelli.bookkeepmananger.bean.TypeBean;
+import com.example.yuzelli.bookkeepmananger.bean.UserBean;
 import com.example.yuzelli.bookkeepmananger.constants.ConstantsUtils;
 import com.example.yuzelli.bookkeepmananger.utils.CommonAdapter;
 import com.example.yuzelli.bookkeepmananger.utils.SharePreferencesUtil;
@@ -136,25 +137,26 @@ public class StatementFragment extends BaseFragment {
         for (int i = 0; i < gridDatas.size(); i++) {
             gridDatas.get(i).setAllMoney(0d);
         }
-        ArrayList<BookKeepBean> bookArr = (ArrayList<BookKeepBean>) SharePreferencesUtil.readObject(getActivity(), ConstantsUtils.Bookkeep_INFO);
+        UserBean u = (UserBean) SharePreferencesUtil.readObject(getActivity(),ConstantsUtils.SP_LOGIN_USER_INFO);
+        ArrayList<BookKeepBean> bookArr = (ArrayList<BookKeepBean>) SharePreferencesUtil.readObject(getActivity(),u.getPhone()+ ConstantsUtils.Bookkeep_INFO);
         ArrayList<BookKeepBean> bookArr2 = new ArrayList<>();
         if (bookArr == null) {
             bookArr = new ArrayList<>();
         }
         for (BookKeepBean b : bookArr) {
             if (spinnerMonth.getSelectedItemPosition()==0&&spinnerWeek.getSelectedItemPosition()==0){
-                if (!b.getYear().equals(2018 - spinnerYear.getSelectedItemPosition() + "")) {
+                if (!b.getYear().equals(2017 - spinnerYear.getSelectedItemPosition() + "")) {
                     continue;
                 }
             }else if (spinnerMonth.getSelectedItemPosition()!=0&&spinnerWeek.getSelectedItemPosition()==0){
-                if (!b.getYear().equals(2018 - spinnerYear.getSelectedItemPosition() + "")) {
+                if (!b.getYear().equals(2017 - spinnerYear.getSelectedItemPosition() + "")) {
                     continue;
                 }
                 if ( !b.getMonth().equals(getM(spinnerMonth.getSelectedItemPosition()))) {
                     continue;
                 }
             }else {
-                if (!b.getYear().equals(2018 - spinnerYear.getSelectedItemPosition() + "")) {
+                if (!b.getYear().equals(2017 - spinnerYear.getSelectedItemPosition() + "")) {
                     continue;
                 }
                 if ( !b.getMonth().equals(getM(spinnerMonth.getSelectedItemPosition()))) {

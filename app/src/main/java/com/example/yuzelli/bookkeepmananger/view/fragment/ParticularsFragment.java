@@ -14,6 +14,7 @@ import com.example.yuzelli.bookkeepmananger.adapter.MyExpandableListViewAdapter;
 import com.example.yuzelli.bookkeepmananger.base.BaseFragment;
 import com.example.yuzelli.bookkeepmananger.bean.BookKeepBean;
 import com.example.yuzelli.bookkeepmananger.bean.PartBean;
+import com.example.yuzelli.bookkeepmananger.bean.UserBean;
 import com.example.yuzelli.bookkeepmananger.constants.ConstantsUtils;
 import com.example.yuzelli.bookkeepmananger.utils.DateUtils;
 import com.example.yuzelli.bookkeepmananger.utils.SharePreferencesUtil;
@@ -89,8 +90,8 @@ public class ParticularsFragment extends BaseFragment {
         int iszhicu = spinnerZhi.getSelectedItemPosition();
         partBeanArrayList = new ArrayList<>();
 
-
-        bookKeepBeen = (ArrayList<BookKeepBean>) SharePreferencesUtil.readObject(getActivity(), ConstantsUtils.Bookkeep_INFO);
+        UserBean u = (UserBean) SharePreferencesUtil.readObject(getActivity(),ConstantsUtils.SP_LOGIN_USER_INFO);
+        bookKeepBeen = (ArrayList<BookKeepBean>) SharePreferencesUtil.readObject(getActivity(), u.getPhone()+ConstantsUtils.Bookkeep_INFO);
         if (bookKeepBeen == null) {
             bookKeepBeen = new ArrayList<>();
         }

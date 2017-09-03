@@ -45,6 +45,8 @@ public class FindPassWoridActivity extends BaseActivity {
     @Override
     protected void binEvent() {
         context = this;
+        imgBack.setVisibility(View.VISIBLE);
+        tvTitle.setText("找回密码");
     }
 
     @Override
@@ -58,7 +60,7 @@ public class FindPassWoridActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.img_back,  R.id.btn_ver, R.id.img_refresh})
+    @OnClick({R.id.img_back, R.id.btn_ver, R.id.img_refresh})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.img_back:
@@ -76,18 +78,19 @@ public class FindPassWoridActivity extends BaseActivity {
     private void doFindAction() {
         String phone = etPhone.getText().toString().trim();
         String ver = etVerPassword.getText().toString().trim();
-        if (phone.equals("")||ver.equals("")){
+        if (phone.equals("") || ver.equals("")) {
             showToast("请输入手机号、验证码");
+            return;
         }
-        if (OtherUtils.isPhoneEnable(phone)){
+        if (!OtherUtils.isPhoneEnable(phone)) {
             showToast("手机号输入不合法");
+            return;
         }
 
-        if(MyPorter.verification().equals(ver)){
-             ChangePassActivity.startAction(context,phone);
+        if (MyPorter.verification().equals(ver)) {
+            ChangePassActivity.startAction(context, phone);
             finish();
-
-        }else {
+        } else {
             showToast("验证码错误");
         }
     }

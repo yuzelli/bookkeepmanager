@@ -27,6 +27,8 @@ public class ConstantsUtils {
     public static final String CAR_INFO = "CAR_INFO_MESSAGE";
     public static final String USER_INFO = "USER_INFO";
     public static final String Bookkeep_INFO = "Bookkeep_INFO";
+    public static final String TYPE_ZHICHU = "TYPE_ZHICHU";
+    public static final String TYPE_SHOURU = "TYPE_SHOURU";
 
 
 
