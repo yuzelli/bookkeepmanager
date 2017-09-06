@@ -82,18 +82,18 @@ public class AddAccountActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.tv_zhichu:
                 iszhichu = true;
-                tvZhichu.setTextColor(ContextCompat.getColor(AddAccountActivity.this,R.color.text_blue_color));
-                tvZhichu.setBackgroundColor(ContextCompat.getColor(AddAccountActivity.this,R.color.white));
-                tvShouru.setTextColor(ContextCompat.getColor(AddAccountActivity.this,R.color.white));
-                tvShouru.setBackgroundColor(ContextCompat.getColor(AddAccountActivity.this,R.color.text_blue_color));
-
-                break;
-            case R.id.tv_shouru:
-                iszhichu = false;
                 tvShouru.setTextColor(ContextCompat.getColor(AddAccountActivity.this,R.color.text_blue_color));
                 tvShouru.setBackgroundColor(ContextCompat.getColor(AddAccountActivity.this,R.color.white));
                 tvZhichu.setTextColor(ContextCompat.getColor(AddAccountActivity.this,R.color.white));
                 tvZhichu.setBackgroundColor(ContextCompat.getColor(AddAccountActivity.this,R.color.text_blue_color));
+
+                break;
+            case R.id.tv_shouru:
+                iszhichu = false;
+                tvZhichu.setTextColor(ContextCompat.getColor(AddAccountActivity.this,R.color.text_blue_color));
+                tvZhichu.setBackgroundColor(ContextCompat.getColor(AddAccountActivity.this,R.color.white));
+                tvShouru.setTextColor(ContextCompat.getColor(AddAccountActivity.this,R.color.white));
+                tvShouru.setBackgroundColor(ContextCompat.getColor(AddAccountActivity.this,R.color.text_blue_color));
                 break;
             case R.id.tv_cancel:
                 finish();

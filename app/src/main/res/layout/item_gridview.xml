@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="10dp"
+    android:background="@drawable/select_girdview_item"
     >
 
 
