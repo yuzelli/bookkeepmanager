@@ -12,8 +12,9 @@ public class ConstantsUtils {
     public static final int REGISTER_GET_DATA = 0x00001004;
     public static final int REGISTER_GET_DATA_FAILURE = 0x00001005;
 
-    public static final String LOCTION_ADDRESS= "http://192.168.0.101:8080/bookkeepinmanagerService/";
+    public static final String LOCTION_ADDRESS= "http://192.168.0.103:8080/bookkeepinmanagerService/";
     public static final String UserService = "userInfoServlet";
+    public static final String CopyService = "copyServlet";
 
 
     //保持登录用户信息

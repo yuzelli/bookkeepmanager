@@ -33,7 +33,9 @@
         <activity android:name=".view.activity.ChangePassActivity" />
         <activity android:name=".view.activity.AddAccountActivity" />
         <activity android:name=".view.activity.SaveAccountActivity" />
-        <activity android:name=".view.activity.PieChartActivity"></activity>
+        <activity android:name=".view.activity.PieChartActivity" />
+        <activity android:name=".view.activity.ParitiesActivity" />
+        <activity android:name=".view.activity.BeiFengActivity"></activity>
     </application>
 
 </manifest>

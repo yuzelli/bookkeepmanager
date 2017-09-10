@@ -11,6 +11,8 @@ public class TypeBean implements Serializable{
     private String name ;
     private int typeRESID;
     private double allMoney = 0;
+    private boolean isZhiChu = true;
+    private boolean isSHouRu = false;
 
     public TypeBean(int typeID, String name, int typeRESID) {
         this.typeID = typeID;

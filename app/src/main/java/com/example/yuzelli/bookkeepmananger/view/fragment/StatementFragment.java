@@ -17,6 +17,7 @@ import com.example.yuzelli.bookkeepmananger.constants.ConstantsUtils;
 import com.example.yuzelli.bookkeepmananger.utils.CommonAdapter;
 import com.example.yuzelli.bookkeepmananger.utils.SharePreferencesUtil;
 import com.example.yuzelli.bookkeepmananger.utils.ViewHolder;
+import com.example.yuzelli.bookkeepmananger.view.activity.PieChartActivity;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -55,9 +56,9 @@ public class StatementFragment extends BaseFragment {
 
     @Override
     protected void bindEvent(View v) {
-        spinnerYear.setSelection(0);
+        spinnerYear.setSelection(1);
         spinnerZhi.setSelection(1);
-        spinnerMonth.setSelection(8);
+        spinnerMonth.setSelection(0);
         spinnerWeek.setSelection(0);
         spinnerYear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -73,6 +74,7 @@ public class StatementFragment extends BaseFragment {
         spinnerWeek.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
                 initListView();
             }
 
@@ -108,7 +110,7 @@ public class StatementFragment extends BaseFragment {
         btnLook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                PieChartActivity.startAction(getActivity(), list);
             }
         });
     }
@@ -120,25 +122,49 @@ public class StatementFragment extends BaseFragment {
 
     private void initListView() {
         list.clear();
-        for (int i = 0 ; i < gridDatas.size() ; i ++){
+        listview.setAdapter(new CommonAdapter<TypeBean>(getActivity(), list, R.layout.cell_paihang) {
+            @Override
+            public void convert(ViewHolder helper, TypeBean item, int position) {
+                helper.setText(R.id.tv_number, position + 1 + "");
+                helper.setText(R.id.tv_name, item.getName());
+                DecimalFormat df = new DecimalFormat("######0.00");
+                double a = item.getAllMoney() * 100;
+                helper.setText(R.id.tv_money, df.format(a) + "%");
+                helper.setImageResource(R.id.img_type, item.getTypeRESID());
+            }
+        });
+        for (int i = 0; i < gridDatas.size(); i++) {
             gridDatas.get(i).setAllMoney(0d);
         }
         ArrayList<BookKeepBean> bookArr = (ArrayList<BookKeepBean>) SharePreferencesUtil.readObject(getActivity(), ConstantsUtils.Bookkeep_INFO);
         ArrayList<BookKeepBean> bookArr2 = new ArrayList<>();
-      if (bookArr==null){
-          bookArr = new ArrayList<>();
-      }
+        if (bookArr == null) {
+            bookArr = new ArrayList<>();
+        }
         for (BookKeepBean b : bookArr) {
-            if (!b.getYear().equals(2017 -spinnerYear.getSelectedItemPosition()+ "")) {
-                continue;
+            if (spinnerMonth.getSelectedItemPosition()==0&&spinnerWeek.getSelectedItemPosition()==0){
+                if (!b.getYear().equals(2018 - spinnerYear.getSelectedItemPosition() + "")) {
+                    continue;
+                }
+            }else if (spinnerMonth.getSelectedItemPosition()!=0&&spinnerWeek.getSelectedItemPosition()==0){
+                if (!b.getYear().equals(2018 - spinnerYear.getSelectedItemPosition() + "")) {
+                    continue;
+                }
+                if ( !b.getMonth().equals(getM(spinnerMonth.getSelectedItemPosition()))) {
+                    continue;
+                }
+            }else {
+                if (!b.getYear().equals(2018 - spinnerYear.getSelectedItemPosition() + "")) {
+                    continue;
+                }
+                if ( !b.getMonth().equals(getM(spinnerMonth.getSelectedItemPosition()))) {
+                    continue;
+                }
+                if (!b.getWeek().equals(getW(spinnerWeek.getSelectedItemPosition()))) {
+                    continue;
+                }
             }
-            if (!b.getMonth().equals(getM(spinnerMonth.getSelectedItemPosition()))) {
-                continue;
-            }
-            if (!b.getWeek().equals(getW(spinnerWeek.getSelectedItemPosition()))) {
-                continue;
-            }
-            if (b.getIsZhiCu()!=spinnerZhi.getSelectedItemPosition()){
+            if (b.getIsZhiCu() != spinnerZhi.getSelectedItemPosition()) {
                 continue;
             }
             bookArr2.add(b);
@@ -148,35 +174,34 @@ public class StatementFragment extends BaseFragment {
             allmoney += Double.valueOf(b.getMoney());
             double a = Double.valueOf(b.getMoney());
             double bb = gridDatas.get(b.getType_id()).getAllMoney();
-            double c= a+bb;
+            double c = a + bb;
             gridDatas.get(b.getType_id()).setAllMoney(c);
         }
-        if (allmoney>0){
-            for (int i = 0 ; i < gridDatas.size(); i ++){
-                gridDatas.get(i).setAllMoney(gridDatas.get(i).getAllMoney()/allmoney);
+        if (allmoney > 0) {
+            for (int i = 0; i < gridDatas.size(); i++) {
+                gridDatas.get(i).setAllMoney(gridDatas.get(i).getAllMoney() / allmoney);
             }
-        }else {
+        } else {
             return;
         }
 
-        ArrayList<TypeBean> types =  new ArrayList<>();
+        ArrayList<TypeBean> types = new ArrayList<>();
         types.addAll(gridDatas);
         Collections.sort(types, new Comparator<TypeBean>() {
             @Override
             public int compare(TypeBean typeBean, TypeBean t1) {
-                if(typeBean.getAllMoney()>t1.getAllMoney()){
+                if (typeBean.getAllMoney() > t1.getAllMoney()) {
                     return -1;
-                }
-                else{
+                } else {
                     return 1;
                 }
             }
         });
         int length = types.size();
 
-        for (int i = 0 ; i < length ; i ++){
-            if (types.get(i).getAllMoney()>=0.01){
-               list.add(types.get(i));
+        for (int i = 0; i < length; i++) {
+            if (types.get(i).getAllMoney() >= 0.01) {
+                list.add(types.get(i));
             }
         }
 
@@ -184,21 +209,20 @@ public class StatementFragment extends BaseFragment {
         listview.setAdapter(new CommonAdapter<TypeBean>(getActivity(), list, R.layout.cell_paihang) {
             @Override
             public void convert(ViewHolder helper, TypeBean item, int position) {
-                 helper.setText(R.id.tv_number,position+1+"");
-                 helper.setText(R.id.tv_name,item.getName());
-                DecimalFormat    df   = new DecimalFormat("######0.00");
-                double a = item.getAllMoney()*100;
-                  helper.setText(R.id.tv_money,df.format(a)+"%");
-                 helper.setImageResource(R.id.img_type,item.getTypeRESID());
+                helper.setText(R.id.tv_number, position + 1 + "");
+                helper.setText(R.id.tv_name, item.getName());
+                DecimalFormat df = new DecimalFormat("######0.00");
+                double a = item.getAllMoney() * 100;
+                helper.setText(R.id.tv_money, df.format(a) + "%");
+                helper.setImageResource(R.id.img_type, item.getTypeRESID());
             }
         });
     }
 
 
-
     private String getW(int selectedItemPosition) {
         String str = "";
-        switch (selectedItemPosition) {
+        switch (selectedItemPosition-1) {
             case 0:
                 str = "第一周";
                 break;
@@ -219,7 +243,7 @@ public class StatementFragment extends BaseFragment {
     }
 
     private String getM(int selectedItemPosition) {
-        String str = String.format("%2d", selectedItemPosition+1).replace(" ", "0");
+        String str = String.format("%2d", selectedItemPosition ).replace(" ", "0");
         return str;
     }
 
@@ -236,6 +260,5 @@ public class StatementFragment extends BaseFragment {
         gridDatas.add(new TypeBean(9, "通讯", R.drawable.ic_tongxing));
         gridDatas.add(new TypeBean(10, "服装", R.drawable.if_fuzhuang));
         gridDatas.add(new TypeBean(11, "美容", R.drawable.ic_meirong));
-
     }
 }
