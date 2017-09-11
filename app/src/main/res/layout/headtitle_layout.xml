@@ -20,5 +20,18 @@
         android:textSize="20sp"
         android:layout_centerInParent="true"
         />
+    <TextView
+        android:id="@+id/tv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:gravity="center"
+        />
 
 </RelativeLayout>

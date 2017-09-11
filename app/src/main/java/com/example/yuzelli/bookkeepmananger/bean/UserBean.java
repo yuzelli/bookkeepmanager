@@ -1,6 +1,8 @@
 package com.example.yuzelli.bookkeepmananger.bean;
 
-public class UserBean {
+import java.io.Serializable;
+
+public class UserBean implements Serializable{
     private int user_id;
     private String phone;
     private String passWord;

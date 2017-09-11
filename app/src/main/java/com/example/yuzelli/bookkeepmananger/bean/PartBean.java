@@ -1,12 +1,13 @@
 package com.example.yuzelli.bookkeepmananger.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by 51644 on 2017/9/7.
  */
 
-public class PartBean {
+public class PartBean implements Serializable{
     private String time;
     private String week;
     private String money;

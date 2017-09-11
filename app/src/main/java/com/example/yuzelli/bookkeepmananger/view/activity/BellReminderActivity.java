@@ -1,6 +1,7 @@
 package com.example.yuzelli.bookkeepmananger.view.activity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -45,7 +46,8 @@ public class BellReminderActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.add_bell:
-                showDailog();
+                Intent intent = new Intent(BellReminderActivity.this,SaveBellReminderActivity.class);
+                startActivity(intent);
                 break;
         }
     }
