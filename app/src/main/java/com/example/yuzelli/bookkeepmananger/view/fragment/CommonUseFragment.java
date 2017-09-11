@@ -46,7 +46,6 @@ public class CommonUseFragment extends BaseFragment {
     @OnClick({ R.id.tv_tixing, R.id.tv_huansuan, R.id.tv_beifeng})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-
             case R.id.tv_tixing:
                 break;
             case R.id.tv_huansuan:

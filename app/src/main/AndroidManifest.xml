@@ -19,10 +19,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.MainActivity">
-
-        </activity>
-        <activity android:name=".view.activity.LoginActivity" >
+        <activity android:name=".view.activity.MainActivity"></activity>
+        <activity android:name=".view.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +36,8 @@
         <activity android:name=".view.activity.PieChartActivity" />
         <activity android:name=".view.activity.ParitiesActivity" />
         <activity android:name=".view.activity.BeiFengActivity" />
-        <activity android:name=".view.activity.SetTypeActivity"></activity>
+        <activity android:name=".view.activity.SetTypeActivity" />
+        <activity android:name=".view.activity.BellReminderActivity"></activity>
     </application>
 
 </manifest>

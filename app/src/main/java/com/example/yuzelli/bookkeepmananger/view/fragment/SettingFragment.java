@@ -45,11 +45,10 @@ public class SettingFragment extends BaseFragment {
 
 
 
-    @OnClick({R.id.img_back, R.id.tv_changeUserInfo, R.id.tv_set_type})
+    @OnClick({R.id.tv_changeUserInfo, R.id.tv_set_type})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.img_back:
-                break;
+
             case R.id.tv_changeUserInfo:
                 break;
             case R.id.tv_set_type:
