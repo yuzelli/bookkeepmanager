@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -50,8 +51,13 @@ public class BellReminderActivity extends BaseActivity {
    private ArrayList<BellReminderBean> bellArr;
     @Override
     protected void fillData() {
-         bellArr = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(BellReminderActivity.this, ConstantsUtils.BELL_REMINDER);
-        if (bellArr.equals("")) {
+        initView();
+
+    }
+
+    private void initView() {
+        bellArr = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(BellReminderActivity.this, ConstantsUtils.BELL_REMINDER);
+        if (bellArr==null) {
             bellArr = new ArrayList<BellReminderBean>();
         }
         lvList.setAdapter(new CommonAdapter<BellReminderBean>(BellReminderActivity.this, bellArr, R.layout.cell_bell) {
@@ -77,6 +83,45 @@ public class BellReminderActivity extends BaseActivity {
                         SharePreferencesUtil.saveObject(BellReminderActivity.this,ConstantsUtils.BELL_REMINDER,bellArr);
                     }
                 });
+            }
+        });
+
+        lvList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view,final int i, long l) {
+
+                new DialogUtils(BellReminderActivity.this, R.layout.view_order_close_dialog) {
+                    @Override
+                    public void initLayout(ViewHelper helper, final Dialog dialog) {
+                        helper.setViewClick(R.id.tv_cancel, new ViewHelper.ViewClickCallBack() {
+                            @Override
+                            public void doClickAction(View v) {
+                                dialog.dismiss();
+                            }
+                        });
+                        helper.setViewClick(R.id.img_cancel, new ViewHelper.ViewClickCallBack() {
+                            @Override
+                            public void doClickAction(View v) {
+                                dialog.dismiss();
+                            }
+                        });
+                        helper.setViewClick(R.id.tv_ok, new ViewHelper.ViewClickCallBack() {
+                            @Override
+                            public void doClickAction(View v) {
+                                bellArr.remove(i);
+
+                                SharePreferencesUtil.saveObject(BellReminderActivity.this, ConstantsUtils.BELL_REMINDER,bellArr);
+                                initView();
+                                dialog.dismiss();
+                            }
+                        });
+
+
+                    }
+                };
+
+
+                return true;
             }
         });
     }

@@ -5,7 +5,9 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.support.annotation.Nullable;
 
 import com.example.yuzelli.bookkeepmananger.R;
@@ -23,7 +25,27 @@ import java.util.ArrayList;
 
 public class MyService extends Service {
 
-
+private Handler handler = new Handler(){
+    @Override
+    public void handleMessage(Message msg) {
+        super.handleMessage(msg);
+        switch (msg.what){
+            case 101010:
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(60*1000);
+                            doNotif();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+                break;
+        }
+    }
+};
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -34,27 +56,19 @@ public class MyService extends Service {
     public void onCreate() {
         super.onCreate();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(60*1000);
-                    doNotif();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+        handler.sendEmptyMessage(101010);
+
     }
 
     private void doNotif() {
+        handler.sendEmptyMessage(101010);
         ArrayList<BellReminderBean> array = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(getApplicationContext(), ConstantsUtils.BELL_REMINDER);
 
         DateUtils d = new DateUtils();
 
         for (BellReminderBean b :array){
             if (b.getChonagfuType().equals("0")){
-                if (d.week==Integer.valueOf(b.getContent())){
+                if (d.week==Integer.valueOf(b.getContent())+1){
                     if (d.hour==b.getHour()&&d.minute==b.getMinute()){
                         showCont(b);
                     }

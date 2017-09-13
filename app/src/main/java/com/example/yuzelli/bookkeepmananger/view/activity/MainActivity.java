@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.yuzelli.bookkeepmananger.R;
 import com.example.yuzelli.bookkeepmananger.base.BaseActivity;
+import com.example.yuzelli.bookkeepmananger.service.MyService;
 import com.example.yuzelli.bookkeepmananger.view.fragment.CommonUseFragment;
 import com.example.yuzelli.bookkeepmananger.view.fragment.ParticularsFragment;
 import com.example.yuzelli.bookkeepmananger.view.fragment.SettingFragment;
@@ -59,6 +60,9 @@ public class MainActivity extends BaseActivity {
             }
 
         });
+
+        Intent intent = new Intent(this, MyService.class);
+        startService(intent);
     }
 
     @Override

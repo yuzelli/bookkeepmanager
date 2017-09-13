@@ -89,7 +89,7 @@ public class SaveBellReminderActivity extends BaseActivity {
                 }
 
                 ArrayList<BellReminderBean> bellArr = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(SaveBellReminderActivity.this, ConstantsUtils.BELL_REMINDER);
-                if (bellArr.equals("")){
+                if (bellArr==null){
                     bellArr = new ArrayList<BellReminderBean>();
                 }
                 BellReminderBean br = new BellReminderBean();
@@ -104,6 +104,9 @@ public class SaveBellReminderActivity extends BaseActivity {
                 }
                 br.setBeizhu(etInput.getText().toString().trim());
                 br.setType(spinner.getSelectedItemPosition());
+                bellArr.add(br);
+                SharePreferencesUtil.saveObject(SaveBellReminderActivity.this,ConstantsUtils.BELL_REMINDER,bellArr);
+                finish();
             }
         });
 

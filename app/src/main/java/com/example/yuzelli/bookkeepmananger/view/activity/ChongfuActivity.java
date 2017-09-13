@@ -42,6 +42,7 @@ public class ChongfuActivity extends BaseActivity {
         radioButton1 = (RadioButton) this.findViewById(R.id.radio1);
         radioButton2 = (RadioButton) this.findViewById(R.id.radio2);
         radioButton0.setChecked(true);
+        tvTitle.setText("设置重复时间");
         tvRight.setVisibility(View.VISIBLE);
         tvRight.setText("确定");
         tvRight.setOnClickListener(new View.OnClickListener() {
