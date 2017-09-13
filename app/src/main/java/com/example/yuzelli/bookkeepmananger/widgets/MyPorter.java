@@ -43,8 +43,8 @@ public class MyPorter extends ImageView {
     private static String[] verificationString = {
             "26c8","8p34","86n5","464x","ne58","3nwd",
             "828f","pdmn","ptd3","d34x","pe5x","n3n2",
-            "pm85","x4ne","w7bm","464x","ne58","3nwd",
-            "26c8","8p34","86n5","464x","ne58","3nwd"
+            "pm85","x4ne","w7bm","3d2p","6xbm","b23y",
+            "bfpm","dy67","f8wy","7px5","2e6x","e66m"
      };
     private static int verificationIndex;
     public MyPorter(Context context, AttributeSet attrs) {

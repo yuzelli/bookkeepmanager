@@ -10,10 +10,12 @@
 
     <Button
         android:layout_width="200dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:background="@drawable/view_shape"
+        android:text="点击进行数据备份"
+        android:textColor="@color/white"
+        android:id="@+id/button"
         android:layout_below="@+id/include2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="168dp"
-        android:text="备份"
-        android:id="@+id/button" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

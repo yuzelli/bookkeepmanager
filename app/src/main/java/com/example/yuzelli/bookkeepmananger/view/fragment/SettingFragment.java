@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.yuzelli.bookkeepmananger.R;
 import com.example.yuzelli.bookkeepmananger.base.BaseFragment;
+import com.example.yuzelli.bookkeepmananger.view.activity.ChangeUserActivity;
 import com.example.yuzelli.bookkeepmananger.view.activity.SetTypeActivity;
 
 import butterknife.BindView;
@@ -50,6 +51,8 @@ public class SettingFragment extends BaseFragment {
         switch (view.getId()) {
 
             case R.id.tv_changeUserInfo:
+                Intent intent1 = new Intent(getActivity(), ChangeUserActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.tv_set_type:
                 Intent intent = new Intent(getActivity(), SetTypeActivity.class);

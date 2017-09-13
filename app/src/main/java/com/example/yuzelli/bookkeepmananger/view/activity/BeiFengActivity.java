@@ -3,6 +3,7 @@ package com.example.yuzelli.bookkeepmananger.view.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +39,8 @@ public class BeiFengActivity extends BaseActivity {
     TextView tvTitle;
     @BindView(R.id.button)
     Button button;
+    @BindView(R.id.img_back)
+    ImageView imgBack;
 
     @Override
     protected int layoutInit() {
@@ -46,7 +49,8 @@ public class BeiFengActivity extends BaseActivity {
 
     @Override
     protected void binEvent() {
-
+        imgBack.setVisibility(View.VISIBLE);
+        tvTitle.setText("数据备份");
     }
 
     @Override
@@ -71,25 +75,29 @@ public class BeiFengActivity extends BaseActivity {
         OkHttpClientManager manager = OkHttpClientManager.getInstance();
         Map<String, String> map = new HashMap<>();
         map.put("type", "beifeng");
-        UserBean u = (UserBean) SharePreferencesUtil.readObject(this,ConstantsUtils.SP_LOGIN_USER_INFO);
-        ArrayList<BookKeepBean> books = (ArrayList<BookKeepBean>) SharePreferencesUtil.readObject(BeiFengActivity.this,u.getPhone()+ ConstantsUtils.Bookkeep_INFO);
+        UserBean u = (UserBean) SharePreferencesUtil.readObject(this, ConstantsUtils.SP_LOGIN_USER_INFO);
+        ArrayList<BookKeepBean> books = (ArrayList<BookKeepBean>) SharePreferencesUtil.readObject(BeiFengActivity.this, u.getPhone() + ConstantsUtils.Bookkeep_INFO);
+        if (books.size() == 0) {
+            showToast("本地没有数据！");
+            return;
+        }
         JSONArray arr = new JSONArray();
-        UserBean userBean = (UserBean) SharePreferencesUtil.readObject(BeiFengActivity.this,ConstantsUtils.SP_LOGIN_USER_INFO);
+        UserBean userBean = (UserBean) SharePreferencesUtil.readObject(BeiFengActivity.this, ConstantsUtils.SP_LOGIN_USER_INFO);
         for (BookKeepBean b : books) {
             JSONObject json = new JSONObject();
             try {
-                json.put("year",b.getYear());
-                json.put("month",b.getMonth());
-                json.put("day",b.getDay());
-                json.put("hour",b.getHour());
-                json.put("min",b.getMin());
-                json.put("week",b.getWeek());
-                json.put("type_id",b.getType_id());
-                json.put("isZhiCu",b.getIsZhiCu());
-                json.put("comment",b.getComment());
-                json.put("money",b.getMoney());
-                json.put("time",b.getTime());
-                json.put("phone",userBean.getPhone());
+                json.put("year", b.getYear());
+                json.put("month", b.getMonth());
+                json.put("day", b.getDay());
+                json.put("hour", b.getHour());
+                json.put("min", b.getMin());
+                json.put("week", b.getWeek());
+                json.put("type_id", b.getType_id());
+                json.put("isZhiCu", b.getIsZhiCu());
+                json.put("comment", b.getComment());
+                json.put("money", b.getMoney());
+                json.put("time", b.getTime());
+                json.put("phone", userBean.getPhone());
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -111,7 +119,7 @@ public class BeiFengActivity extends BaseActivity {
                 JSONObject object = new JSONObject(result);
                 String flag = object.getString("error");
                 if (flag.equals("ok")) {
-
+                    showToast("备份成功");
                 } else {
 
                 }
@@ -119,4 +127,5 @@ public class BeiFengActivity extends BaseActivity {
         });
 
     }
+
 }

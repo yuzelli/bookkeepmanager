@@ -14,6 +14,7 @@ public class DateUtils {
     public int hour;
     public int minute;
     public int second;
+    public int week;
     /**
      * 获取当前时间的年月日时分秒
      * @return
@@ -33,6 +34,7 @@ public class DateUtils {
          hour = c.get(Calendar.HOUR_OF_DAY);
          minute = c.get(Calendar.MINUTE);
          second = c.get(Calendar.SECOND);
+         week = c.get(Calendar.DAY_OF_WEEK)-1;
     }
 
     public  String  getSummaryBeiginDate(){

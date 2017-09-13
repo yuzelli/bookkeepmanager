@@ -9,6 +9,8 @@ public class ConstantsUtils {
     public static final int SPLASH_START_ACTIVITY = 0x00001001;
     public static final int LOGIN_GET_DATA = 0x00001002;
     public static final int LOGIN_GET_DATA_FAILURE = 0x00001003;
+    public static final int UPDATA_USER_GET_DATA = 0x00001006;
+    public static final int UPDATA_USER_GET_DATA_FAILURE = 0x00001007;
     public static final int REGISTER_GET_DATA = 0x00001004;
     public static final int REGISTER_GET_DATA_FAILURE = 0x00001005;
 
@@ -19,16 +21,15 @@ public class ConstantsUtils {
 
     //保持登录用户信息
     public static final String SP_LOGIN_USER_INFO = "UserInfo";
-    public static final String SP_MU_BIAO_DEVICE_INFO = "MUBIAOSHEBEI";
-    public static final String SP_TIME = "TIME_SETING";
 
     //用户头像存放文件名
     public static final String AVATAR_FILE_PATH = "/userHeadImg.jpg";
-    public static final String CAR_INFO = "CAR_INFO_MESSAGE";
-    public static final String USER_INFO = "USER_INFO";
+
+
     public static final String Bookkeep_INFO = "Bookkeep_INFO";
     public static final String TYPE_ZHICHU = "TYPE_ZHICHU";
     public static final String TYPE_SHOURU = "TYPE_SHOURU";
+    public static final String BELL_REMINDER = "BELL_REMINDER";
 
 
 

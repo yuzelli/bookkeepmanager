@@ -11,7 +11,12 @@ import android.widget.TimePicker;
 
 import com.example.yuzelli.bookkeepmananger.R;
 import com.example.yuzelli.bookkeepmananger.base.BaseActivity;
+import com.example.yuzelli.bookkeepmananger.bean.BellReminderBean;
+import com.example.yuzelli.bookkeepmananger.constants.ConstantsUtils;
 import com.example.yuzelli.bookkeepmananger.utils.DateUtils;
+import com.example.yuzelli.bookkeepmananger.utils.SharePreferencesUtil;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -54,7 +59,7 @@ public class SaveBellReminderActivity extends BaseActivity {
 
         tpTime.setCurrentHour(hour);
         tpTime.setCurrentMinute(minute);
-
+        tpTime.setIs24HourView(true);
         tpTime.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker timePicker, int i, int i1) {
@@ -69,6 +74,36 @@ public class SaveBellReminderActivity extends BaseActivity {
                         ChongfuActivity.class);
                 startActivityForResult(intent, 1000);// requestCode
 
+            }
+        });
+
+        spinner.setSelection(0);
+
+        tvRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (type==null||type.equals("")){
+                    showToast("设置重复时间");
+                    return;
+                }
+
+                ArrayList<BellReminderBean> bellArr = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(SaveBellReminderActivity.this, ConstantsUtils.BELL_REMINDER);
+                if (bellArr.equals("")){
+                    bellArr = new ArrayList<BellReminderBean>();
+                }
+                BellReminderBean br = new BellReminderBean();
+                br.setHour(hour);
+                br.setMinute(minute);
+                br.setChonagfuType(type);
+                br.setContent(content);
+                if (content2==null||content2.equals("")){
+                    br.setContent2("");
+                }else {
+                    br.setContent2(content2);
+                }
+                br.setBeizhu(etInput.getText().toString().trim());
+                br.setType(spinner.getSelectedItemPosition());
             }
         });
 
@@ -96,7 +131,6 @@ public class SaveBellReminderActivity extends BaseActivity {
              type = data.getStringExtra("type");
             if (type.equals("0")){
                  content = data.getStringExtra("content");
-
                 tvChongfu.setText("每"+"周"+(Integer.valueOf(content)+1));
             }else if (type.equals("1")){
                  content = data.getStringExtra("content");

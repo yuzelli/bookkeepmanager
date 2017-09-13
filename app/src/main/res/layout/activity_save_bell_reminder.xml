@@ -38,7 +38,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="每周"/>
+            android:text="未设置"/>
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
