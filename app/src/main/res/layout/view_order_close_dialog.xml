@@ -33,7 +33,7 @@
         android:textSize="@dimen/phone_content"
         android:textColor="@color/text_content_color"
         android:background="@color/title_bg"
-        android:text="订单关闭的同时会把订单的支付金额退还给用户，现金和刷卡需要人工退款。" />
+        android:text="次操作将会删除这个提示" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/phone_content"
-        android:text="关闭订单"
+        android:text="删除提示"
         android:layout_marginLeft="5dp"
         android:layout_alignBottom="@+id/img_cancel"
         android:layout_alignParentLeft="true"

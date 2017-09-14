@@ -99,7 +99,7 @@ private Handler handler = new Handler(){
                 .setTicker(types[b.getType()])  //设置顶部出现文字
                 .setContentTitle(types[b.getType()]) //设置下拉后通知标题
                 .setContentText(b.getBeizhu()) //设置下拉后出现的内容
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.ic_app)
                 .setContentIntent(pi) //设置点击跳转
                 .build();
         notification.flags = Notification.FLAG_NO_CLEAR;
