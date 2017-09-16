@@ -94,11 +94,11 @@ public class DateTimePickDialogUtil implements OnDateChangedListener , TimePicke
                 .setView(dateTimeLayout)
                 .setPositiveButton("设置", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        if (DateUtils.date2TimeStamp(dateTime)>System.currentTimeMillis()/1000){
-                            Toast.makeText(MyApplication.getContextObject(),"设置的时间大于当前时间,\n已自动设置为系统当前时间",Toast.LENGTH_SHORT).show();
-                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-                            dateTime = sdf.format(System.currentTimeMillis());
-                        }
+//                        if (DateUtils.date2TimeStamp(dateTime)>System.currentTimeMillis()/1000){
+//                            Toast.makeText(MyApplication.getContextObject(),"设置的时间大于当前时间,\n已自动设置为系统当前时间",Toast.LENGTH_SHORT).show();
+//                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+//                            dateTime = sdf.format(System.currentTimeMillis());
+//                        }
                         inputDate.setText(dateTime);
                     }
                 })

@@ -63,7 +63,9 @@ private Handler handler = new Handler(){
     private void doNotif() {
         handler.sendEmptyMessage(101010);
         ArrayList<BellReminderBean> array = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(getApplicationContext(), ConstantsUtils.BELL_REMINDER);
-
+        if(array==null){
+            array = new ArrayList<>();
+        }
         DateUtils d = new DateUtils();
 
         for (BellReminderBean b :array){

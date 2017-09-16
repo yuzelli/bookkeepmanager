@@ -134,12 +134,41 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_centerInParent="true" />
+    <RelativeLayout
+        android:id="@+id/rl_name"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/v_center"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_height="30dp">
 
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="昵称："
+            android:textColor="@color/text_title_color"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/tv_name"
+            android:hint="请输入昵称"
+            android:paddingLeft="5dp"
+            android:textSize="13sp"
+            android:inputType="textPassword"
+            android:background="@drawable/view_shape_line"
+            android:textColor="@color/text_title_color" />
+    </RelativeLayout>
     <RelativeLayout
         android:id="@+id/rl_content"
         android:layout_width="match_parent"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/v_center"
+        android:layout_below="@+id/rl_name"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_height="30dp">

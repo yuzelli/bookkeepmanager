@@ -57,7 +57,7 @@ public class StatementFragment extends BaseFragment {
 
     @Override
     protected void bindEvent(View v) {
-        spinnerYear.setSelection(1);
+        spinnerYear.setSelection(0);
         spinnerZhi.setSelection(1);
         spinnerMonth.setSelection(0);
         spinnerWeek.setSelection(0);

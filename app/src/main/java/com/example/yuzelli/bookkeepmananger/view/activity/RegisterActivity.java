@@ -56,6 +56,8 @@ public class RegisterActivity extends BaseActivity {
     EditText etOkPassword;
     @BindView(R.id.et_version)
     EditText et_version;
+    @BindView(R.id.et_name)
+    EditText et_name;
     @BindView(R.id.btn_register)
     Button btn_register;
 
@@ -116,6 +118,7 @@ public class RegisterActivity extends BaseActivity {
         String pass = etPassword.getText().toString().trim();
         String okpass = etOkPassword.getText().toString().trim();
         String version = et_version.getText().toString().trim();
+        String name = et_name.getText().toString().trim();
         if (phone.equals("")) {
             showToast("请输入手机号");
             return false;
@@ -126,6 +129,9 @@ public class RegisterActivity extends BaseActivity {
         }
         if (okpass.equals("")) {
             showToast("请再次输入密码");
+            return false;
+        }if (name.equals("")) {
+            showToast("请输入昵称");
             return false;
         }
         if (version.equals("")) {
@@ -141,7 +147,7 @@ public class RegisterActivity extends BaseActivity {
             showToast("两次密码输入不一致");
             return false;
         }
-        if (!MyPorter.verification().equals(version)){
+        if (!MyPorter.verification().equals(version)) {
             showToast("验证码错误");
             return false;
         }
@@ -154,7 +160,7 @@ public class RegisterActivity extends BaseActivity {
         map.put("type", "register");
         map.put("phone", etPhone.getText().toString().trim());
         map.put("passWord", etPassword.getText().toString().trim());
-        map.put("name", "");
+        map.put("name", et_name.getText().toString().trim());
         String url = OkHttpClientManager.attachHttpGetParams(ConstantsUtils.LOCTION_ADDRESS + ConstantsUtils.UserService, map);
         manager.getAsync(url, new OkHttpClientManager.DataCallBack() {
             @Override

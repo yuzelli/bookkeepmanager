@@ -19,6 +19,7 @@ import com.example.yuzelli.bookkeepmananger.constants.ConstantsUtils;
 import com.example.yuzelli.bookkeepmananger.utils.DateUtils;
 import com.example.yuzelli.bookkeepmananger.utils.SharePreferencesUtil;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -33,6 +34,8 @@ import butterknife.Unbinder;
 public class ParticularsFragment extends BaseFragment {
     @BindView(R.id.tv_year)
     TextView tvYear;
+    @BindView(R.id.tv_all_money)
+    TextView tv_all_money;
     @BindView(R.id.sprinner_month)
     Spinner sprinnerMonth;
     @BindView(R.id.spinner_zhi)
@@ -136,10 +139,15 @@ public class ParticularsFragment extends BaseFragment {
         }
         MyExpandableListViewAdapter adapter = new MyExpandableListViewAdapter(getActivity(),partBeanArrayList);
               listview.setAdapter(adapter);
+        double all = 0.0d;
+        for (PartBean p :partBeanArrayList){
+            all = all + Double.valueOf(p.getMoney());
+        }
+        DecimalFormat df = new DecimalFormat("######0.00");
+        tv_all_money.setText(df.format(all));
+
           for(int i = 0; i < adapter.getGroupCount(); i++){
-
               listview.expandGroup(i);
-
         }
     }
 
