@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -16,6 +17,7 @@ import com.example.yuzelli.bookkeepmananger.bean.TypeBean;
 import com.example.yuzelli.bookkeepmananger.bean.UserBean;
 import com.example.yuzelli.bookkeepmananger.constants.ConstantsUtils;
 import com.example.yuzelli.bookkeepmananger.utils.CommonAdapter;
+import com.example.yuzelli.bookkeepmananger.utils.DateUtils;
 import com.example.yuzelli.bookkeepmananger.utils.SharePreferencesUtil;
 import com.example.yuzelli.bookkeepmananger.utils.ViewHolder;
 import com.example.yuzelli.bookkeepmananger.view.activity.PieChartActivity;
@@ -49,7 +51,7 @@ public class StatementFragment extends BaseFragment {
     ListView listview;
     private ArrayList<TypeBean> gridDatas = new ArrayList<>();
     private ArrayList<TypeBean> list = new ArrayList<>();
-
+    ArrayList<String> SprYears = new ArrayList<>();
     @Override
     protected int layoutInit() {
         return R.layout.fragment_statement;
@@ -57,7 +59,15 @@ public class StatementFragment extends BaseFragment {
 
     @Override
     protected void bindEvent(View v) {
-        spinnerYear.setSelection(0);
+
+        DateUtils dateUtils = new DateUtils();
+
+        for (int i  = 0 ; i <101;i++){
+            SprYears.add((dateUtils.year-50+i)+"");
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, SprYears);
+        spinnerYear.setAdapter(adapter);
+        spinnerYear.setSelection(50);
         spinnerZhi.setSelection(1);
         spinnerMonth.setSelection(0);
         spinnerWeek.setSelection(0);
@@ -144,19 +154,21 @@ public class StatementFragment extends BaseFragment {
             bookArr = new ArrayList<>();
         }
         for (BookKeepBean b : bookArr) {
+            String y = SprYears.get(spinnerYear.getSelectedItemPosition());
             if (spinnerMonth.getSelectedItemPosition()==0&&spinnerWeek.getSelectedItemPosition()==0){
-                if (!b.getYear().equals(2017 - spinnerYear.getSelectedItemPosition() + "")) {
+
+                if (!b.getYear().equals(y)) {
                     continue;
                 }
             }else if (spinnerMonth.getSelectedItemPosition()!=0&&spinnerWeek.getSelectedItemPosition()==0){
-                if (!b.getYear().equals(2017 - spinnerYear.getSelectedItemPosition() + "")) {
+                if (!b.getYear().equals(y)) {
                     continue;
                 }
                 if ( !b.getMonth().equals(getM(spinnerMonth.getSelectedItemPosition()))) {
                     continue;
                 }
             }else {
-                if (!b.getYear().equals(2017 - spinnerYear.getSelectedItemPosition() + "")) {
+                if (!b.getYear().equals(y)) {
                     continue;
                 }
                 if ( !b.getMonth().equals(getM(spinnerMonth.getSelectedItemPosition()))) {

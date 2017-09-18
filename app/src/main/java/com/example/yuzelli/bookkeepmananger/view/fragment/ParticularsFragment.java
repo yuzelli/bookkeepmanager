@@ -44,7 +44,7 @@ public class ParticularsFragment extends BaseFragment {
     ExpandableListView listview;
     private ArrayList<BookKeepBean> bookKeepBeen;
     private ArrayList<PartBean> partBeanArrayList;
-
+    DateUtils dateUtils = new DateUtils();
     @Override
     protected int layoutInit() {
         return R.layout.fragment_particulars;
@@ -53,7 +53,7 @@ public class ParticularsFragment extends BaseFragment {
     @Override
     protected void bindEvent(View v) {
 
-        DateUtils dateUtils = new DateUtils();
+
         tvYear.setText(dateUtils.year+"年");
         int m = dateUtils.month;
         sprinnerMonth.setSelection(m-1);
@@ -100,6 +100,9 @@ public class ParticularsFragment extends BaseFragment {
         }
         ArrayList<String> dayLists = new ArrayList<>();
         for (BookKeepBean book : bookKeepBeen) {
+            if (!book.getYear().equals(dateUtils.year)){
+                continue;
+            }
             if (!spinner_month.equals(book.getMonth()) || iszhicu != book.getIsZhiCu()) {
                 continue;
             }
