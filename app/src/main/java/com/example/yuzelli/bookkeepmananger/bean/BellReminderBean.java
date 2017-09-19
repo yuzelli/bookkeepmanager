@@ -16,6 +16,7 @@ public class BellReminderBean implements Serializable {
     private int type;
     private boolean opean = true;
 
+
     public boolean isOpean() {
         return opean;
     }

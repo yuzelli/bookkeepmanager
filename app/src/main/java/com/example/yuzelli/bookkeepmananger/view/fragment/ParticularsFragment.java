@@ -100,7 +100,7 @@ public class ParticularsFragment extends BaseFragment {
         }
         ArrayList<String> dayLists = new ArrayList<>();
         for (BookKeepBean book : bookKeepBeen) {
-            if (!book.getYear().equals(dateUtils.year)){
+            if (!book.getYear().equals(dateUtils.year+"")){
                 continue;
             }
             if (!spinner_month.equals(book.getMonth()) || iszhicu != book.getIsZhiCu()) {

@@ -12,6 +12,7 @@ import android.widget.TimePicker;
 import com.example.yuzelli.bookkeepmananger.R;
 import com.example.yuzelli.bookkeepmananger.base.BaseActivity;
 import com.example.yuzelli.bookkeepmananger.bean.BellReminderBean;
+import com.example.yuzelli.bookkeepmananger.bean.UserBean;
 import com.example.yuzelli.bookkeepmananger.constants.ConstantsUtils;
 import com.example.yuzelli.bookkeepmananger.utils.DateUtils;
 import com.example.yuzelli.bookkeepmananger.utils.SharePreferencesUtil;
@@ -87,16 +88,18 @@ public class SaveBellReminderActivity extends BaseActivity {
                     showToast("设置重复时间");
                     return;
                 }
+                UserBean u = (UserBean) SharePreferencesUtil.readObject(SaveBellReminderActivity.this,ConstantsUtils.SP_LOGIN_USER_INFO);
 
-                ArrayList<BellReminderBean> bellArr = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(SaveBellReminderActivity.this, ConstantsUtils.BELL_REMINDER);
+                ArrayList<BellReminderBean> bellArr = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(SaveBellReminderActivity.this,u.getPhone()+ ConstantsUtils.BELL_REMINDER);
                 if (bellArr==null){
-                    bellArr = new ArrayList<BellReminderBean>();
+                    bellArr = new ArrayList<>();
                 }
                 BellReminderBean br = new BellReminderBean();
                 br.setHour(hour);
                 br.setMinute(minute);
                 br.setChonagfuType(type);
                 br.setContent(content);
+
                 if (content2==null||content2.equals("")){
                     br.setContent2("");
                 }else {
@@ -105,7 +108,7 @@ public class SaveBellReminderActivity extends BaseActivity {
                 br.setBeizhu(etInput.getText().toString().trim());
                 br.setType(spinner.getSelectedItemPosition());
                 bellArr.add(br);
-                SharePreferencesUtil.saveObject(SaveBellReminderActivity.this,ConstantsUtils.BELL_REMINDER,bellArr);
+                SharePreferencesUtil.saveObject(SaveBellReminderActivity.this,u.getPhone()+ConstantsUtils.BELL_REMINDER,bellArr);
                 finish();
             }
         });

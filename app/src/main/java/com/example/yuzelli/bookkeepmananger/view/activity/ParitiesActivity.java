@@ -68,7 +68,7 @@ public class ParitiesActivity extends BaseActivity {
         int p2 = spinnerOut.getSelectedItemPosition();
         float price = Float.valueOf(etInput.getText().toString().trim());
         DecimalFormat df = new DecimalFormat("######0.00");
-        double a = price/prices[p1]*prices[p2];
+        double a = price/prices[p2]*prices[p1];
         etOut.setText(df.format(a)+"");
 
     }

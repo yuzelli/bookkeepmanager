@@ -14,6 +14,7 @@ import android.widget.ToggleButton;
 import com.example.yuzelli.bookkeepmananger.R;
 import com.example.yuzelli.bookkeepmananger.base.BaseActivity;
 import com.example.yuzelli.bookkeepmananger.bean.BellReminderBean;
+import com.example.yuzelli.bookkeepmananger.bean.UserBean;
 import com.example.yuzelli.bookkeepmananger.constants.ConstantsUtils;
 import com.example.yuzelli.bookkeepmananger.utils.CommonAdapter;
 import com.example.yuzelli.bookkeepmananger.utils.DialogUtils;
@@ -56,10 +57,13 @@ public class BellReminderActivity extends BaseActivity {
     }
 
     private void initView() {
-        bellArr = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(BellReminderActivity.this, ConstantsUtils.BELL_REMINDER);
+        UserBean u = (UserBean) SharePreferencesUtil.readObject(BellReminderActivity.this,ConstantsUtils.SP_LOGIN_USER_INFO);
+        bellArr = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(BellReminderActivity.this,u.getPhone()+ ConstantsUtils.BELL_REMINDER);
         if (bellArr==null) {
             bellArr = new ArrayList<BellReminderBean>();
         }
+
+
         lvList.setAdapter(new CommonAdapter<BellReminderBean>(BellReminderActivity.this, bellArr, R.layout.cell_bell) {
             @Override
             public void convert(ViewHolder helper, BellReminderBean item, final int position) {
@@ -80,6 +84,7 @@ public class BellReminderActivity extends BaseActivity {
                     @Override
                     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                         bellArr.get(position).setOpean(b);
+
                         SharePreferencesUtil.saveObject(BellReminderActivity.this,ConstantsUtils.BELL_REMINDER,bellArr);
                     }
                 });

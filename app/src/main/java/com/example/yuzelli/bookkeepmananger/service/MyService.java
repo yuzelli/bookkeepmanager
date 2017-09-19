@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 
 import com.example.yuzelli.bookkeepmananger.R;
 import com.example.yuzelli.bookkeepmananger.bean.BellReminderBean;
+import com.example.yuzelli.bookkeepmananger.bean.UserBean;
 import com.example.yuzelli.bookkeepmananger.constants.ConstantsUtils;
 import com.example.yuzelli.bookkeepmananger.utils.DateUtils;
 import com.example.yuzelli.bookkeepmananger.utils.SharePreferencesUtil;
@@ -62,7 +63,11 @@ private Handler handler = new Handler(){
 
     private void doNotif() {
         handler.sendEmptyMessage(101010);
-        ArrayList<BellReminderBean> array = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(getApplicationContext(), ConstantsUtils.BELL_REMINDER);
+        UserBean u = (UserBean) SharePreferencesUtil.readObject(getApplicationContext(),ConstantsUtils.SP_LOGIN_USER_INFO);
+        if (u==null){
+            return;
+        }
+        ArrayList<BellReminderBean> array = (ArrayList<BellReminderBean>) SharePreferencesUtil.readObject(getApplicationContext(),u.getPhone()+ ConstantsUtils.BELL_REMINDER);
         if(array==null){
             array = new ArrayList<>();
         }
